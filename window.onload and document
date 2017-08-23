@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title></title>
+            <script>
+                function bodyLoad() {
+                    alert("alert from body onload");
+                    alert("content from d1: " + document.getElementById("d1").innerText);
+                }
+            
+                function winLoad() {
+                    alert("alert from window.onload");
+                    if (document.getElementById("d1") != null) {
+                        alert("content from d1: " + document.getElementById("d1").innerText);
+                    }
+                    else {
+                        alert("failed to find d1");
+                    }
+                }
+            
+                window.onload = winLoad();
+            </script>
+        </head>
+        <body onload="bodyLoad()">
+            <div id="d1">
+                html body
+            </div>
+        </body>
+        </html>     
